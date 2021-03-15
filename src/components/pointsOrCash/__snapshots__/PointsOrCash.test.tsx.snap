@@ -7,28 +7,10 @@ exports[`PointsOrCash should render the PointsOrCash Component correctly 1`] = `
     onSubmit={[Function]}
   >
     <p>
-      Select rewards Program
+      Select A Rewards Program
     </p>
     <p>
-      Enter ticker price
-    </p>
-    <CurrencyInput
-      allowNegative={false}
-      autoFocus={false}
-      className="form-field"
-      decimalSeparator="."
-      inputType="text"
-      onChange={[Function]}
-      onChangeEvent={[Function]}
-      precision="2"
-      prefix=""
-      selectAllOnFocus={false}
-      suffix=""
-      thousandSeparator=","
-      value=""
-    />
-    <p>
-      How many points do you have ?
+      Enter Ticket Price
     </p>
     <CurrencyInput
       allowNegative={false}
@@ -45,15 +27,33 @@ exports[`PointsOrCash should render the PointsOrCash Component correctly 1`] = `
       thousandSeparator=","
       value={0}
     />
-    <button
+    <p>
+      Enter Ticket Fees
+    </p>
+    <CurrencyInput
+      allowNegative={false}
+      autoFocus={false}
       className="form-field"
+      decimalSeparator="."
+      inputType="text"
+      onChange={[Function]}
+      onChangeEvent={[Function]}
+      precision="2"
+      prefix=""
+      selectAllOnFocus={false}
+      suffix=""
+      thousandSeparator=","
+      value={5.95}
+    />
+    <i>
+      * Ticket Fees are set to 5.95 by default. Please update with ticket Fees.
+    </i>
+    <button
+      className="form-button"
       type="submit"
     >
       Calculate
     </button>
-    <p>
-      You should use points for this ticket
-    </p>
   </form>
 </div>
 `;

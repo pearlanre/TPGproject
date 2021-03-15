@@ -1,6 +1,31 @@
-# Getting Started with Create React App
+# TPG point to Cash Calculator
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A simple Application that recieves input from a user and tells them whether to use cash or points based on the loyalty program. This project is built using React hooks, typescript, Jest and enzyme libraries for testing.
+
+#Getting Started
+
+## Prerequisites(Packages used)
+
+- react-currency-input
+- react-select
+- es-lint
+
+These are automatically installed running the command `npm install`
+
+#Coding Break-Down
+#Steps
+- First step was to convert file from csv to JSON and store it in the public directory to be able to mimick calls to an api.This enables the fetch call to be replace with URL for real data.
+- Filtered out all the programs that did not have a TPG Valuation, once database (JSON) file is updated with new values, it will automatically display it in the drop-down selection.
+- A select component is used that enable the user to be able to select rewards program from a drop down which can be searched, by typing name.
+- For ticket price, I used a currencyInput which ensure the data validation and does not allow characters and values less than Zero. Making the assumption that the currency is USD.
+- Recommendations are only shown for valid entries.   
+
+
+#Assumptions
+-USD
+-Point Usage can automatically be calculated based on the tpg_valuation being less than or greater than 1. 
+#Improvements
+-more test cases
 
 ## Available Scripts
 
@@ -17,7 +42,7 @@ You will also see any lint errors in the console.
 ### `npm test`
 
 Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+See the section about [running tests]
 
 ### `npm run build`
 
@@ -27,20 +52,7 @@ It correctly bundles React in production mode and optimizes the build for the be
 The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### `npm run format`
 
-### `npm run eject`
+This command formats the code following specifications in ESlint file. 
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).

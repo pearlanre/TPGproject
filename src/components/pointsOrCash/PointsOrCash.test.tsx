@@ -15,16 +15,16 @@ describe('PointsOrCash', () => {
     expect(wrapped).toMatchSnapshot();
   });
   it('renders Select Rewards label', () => {
-    const rewardsLabel = 'Select rewards Program';
+    const rewardsLabel = 'Select A Rewards Program';
     expect(wrapped.find('p').at(0).text()).toEqual(rewardsLabel);
   });
   it('renders ticket price label', () => {
-    const ticketLabel = 'Enter ticker price';
+    const ticketLabel = 'Enter Ticket Price';
     expect(wrapped.find('p').at(1).text()).toEqual(ticketLabel);
   });
   it('renders form component and other components', () => {
     expect(wrapped.find('form')).toHaveLength(1);
-    expect(wrapped.find('p')).toHaveLength(4);
+    expect(wrapped.find('p')).toHaveLength(3);
     expect(wrapped.find('button')).toHaveLength(1);
   });
 });

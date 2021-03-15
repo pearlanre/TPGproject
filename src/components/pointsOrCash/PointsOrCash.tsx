@@ -39,7 +39,7 @@ export const PointsOrCash: React.FunctionComponent<Props> = () => {
   const handleSubmit = (e: any) => {
     e.preventDefault();
     setSubmitted(true);
-    if (loyaltyProgram.tpg_valuation > 1) {
+    if (loyaltyProgram.tpg_valuation > 1 && ticketFees < ticketCost) {
       setUsePoints(true);
     } else {
       setUsePoints(false);
@@ -47,7 +47,13 @@ export const PointsOrCash: React.FunctionComponent<Props> = () => {
     const points = Math.round(ticketCost / loyaltyProgram.tpg_valuation);
     setPointsNeeded(points);
   };
-  const showRecommenation =
+  const handleLoyaltyChange = (option) => {
+    setLoyaltyProgram(option);
+    setTicketFees(5.95);
+    setTicketCost(0);
+    setSubmitted(false);
+  };
+  const showRecommendation =
     submitted && !Number.isNaN(pointsNeeded) && Number.isFinite(pointsNeeded);
   return (
     <div>
@@ -59,7 +65,7 @@ export const PointsOrCash: React.FunctionComponent<Props> = () => {
             getOptionLabel={(option) => option.name}
             getOptionValue={(option) => option.id}
             defaultValue={loyaltyProgram}
-            onChange={setLoyaltyProgram}
+            onChange={handleLoyaltyChange}
           />
         )}
 
@@ -88,13 +94,13 @@ export const PointsOrCash: React.FunctionComponent<Props> = () => {
         <button className="form-button" type="submit">
           Calculate
         </button>
-        {showRecommenation && (
+        {showRecommendation && (
           <p>
             You need {pointsNeeded} points plus ${ticketFees} for this ticket.
           </p>
         )}
 
-        {showRecommenation &&
+        {showRecommendation &&
           (usePoints ? (
             <p>TPG recommends using points for this ticket</p>
           ) : (
