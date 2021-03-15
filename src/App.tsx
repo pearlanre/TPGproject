@@ -1,5 +1,5 @@
 import React from 'react';
-import { PointsOrCash } from './components/PointsOrCash';
+import { PointsOrCash } from './components/pointsOrCash/PointsOrCash';
 import './App.css';
 
 function App(): any {
@@ -7,7 +7,7 @@ function App(): any {
   // @ts-ignore
   return (
     <div className="App">
-      <h1>Point to Cash Calculator</h1>
+      <h1>Cash to Points Calculator</h1>
       <PointsOrCash />
     </div>
   );

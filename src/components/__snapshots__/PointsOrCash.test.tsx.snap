@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PointsOrCash should render the PointsOrCash Component correctly 1`] = `
+<div>
+  <form
+    className="register-form"
+    onSubmit={[Function]}
+  >
+    <p>
+      Select rewards Program
+    </p>
+    <p>
+      Enter ticker price
+    </p>
+    <CurrencyInput
+      allowNegative={false}
+      autoFocus={false}
+      className="form-field"
+      decimalSeparator="."
+      inputType="text"
+      onChange={[Function]}
+      onChangeEvent={[Function]}
+      precision="2"
+      prefix=""
+      selectAllOnFocus={false}
+      suffix=""
+      thousandSeparator=","
+      value=""
+    />
+    <p>
+      How many points do you have ?
+    </p>
+    <CurrencyInput
+      allowNegative={false}
+      autoFocus={false}
+      className="form-field"
+      decimalSeparator="."
+      inputType="text"
+      onChange={[Function]}
+      onChangeEvent={[Function]}
+      precision="2"
+      prefix=""
+      selectAllOnFocus={false}
+      suffix=""
+      thousandSeparator=","
+      value={0}
+    />
+    <button
+      className="form-field"
+      type="submit"
+    >
+      Calculate
+    </button>
+    <p>
+      You should use points for this ticket
+    </p>
+  </form>
+</div>
+`;

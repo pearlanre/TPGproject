@@ -19,7 +19,8 @@ export const PointsOrCash: React.FunctionComponent<Props> = () => {
         return response.json();
       })
       .then(function (myJson) {
-        setData(myJson);
+        const filtered = myJson.filter((val) => val.tpg_valuation !== '');
+        setData(filtered);
       });
   };
   useEffect(() => {
@@ -29,28 +30,29 @@ export const PointsOrCash: React.FunctionComponent<Props> = () => {
     name: '',
     tpg_valuation: 0,
   });
-  const [ticketCost, setTicketCost] = useState('');
-  const [points, setPoints] = useState(0);
+  const [ticketCost, setTicketCost] = useState(0);
   const [submitted, setSubmitted] = useState(false);
-  const [pointsPrice, setPointsPrice] = useState('');
+  const [ticketFees, setTicketFees] = useState(5.95);
+  const [usePoints, setUsePoints] = useState(false);
+  const [pointsNeeded, setPointsNeeded] = useState(0);
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
-
-    const total =
-      parseFloat(String(loyaltyProgram.tpg_valuation)) *
-      parseInt(String(points), 10);
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
-    setPointsPrice(total);
     setSubmitted(true);
+    if (loyaltyProgram.tpg_valuation > 1) {
+      setUsePoints(true);
+    } else {
+      setUsePoints(false);
+    }
+    const points = Math.round(ticketCost / loyaltyProgram.tpg_valuation);
+    setPointsNeeded(points);
   };
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  // @ts-ignore
+  const showRecommenation =
+    submitted && !Number.isNaN(pointsNeeded) && Number.isFinite(pointsNeeded);
   return (
     <div>
       <form className="register-form" onSubmit={handleSubmit}>
-        <p>Select rewards Program</p>
+        <p>Select A Rewards Program</p>
         {data && data.length > 0 && (
           <Select
             options={data}
@@ -61,10 +63,10 @@ export const PointsOrCash: React.FunctionComponent<Props> = () => {
           />
         )}
 
-        {submitted && !loyaltyProgram && (
+        {submitted && !loyaltyProgram.name && (
           <span id="loyalty-error">Please select a Loyalty program</span>
         )}
-        <p>Enter ticker price</p>
+        <p>Enter Ticket Price</p>
         <CurrencyInput
           className="form-field"
           value={ticketCost}
@@ -73,26 +75,31 @@ export const PointsOrCash: React.FunctionComponent<Props> = () => {
         {submitted && !ticketCost && (
           <span id="loyalty-error">Please Enter the Ticket Cost</span>
         )}
-        <p>How many points do you have ?</p>
+        <p>Enter Ticket Fees</p>
         <CurrencyInput
           className="form-field"
-          value={points}
-          onChangeEvent={(e) => setPoints(e.target.value)}
+          value={ticketFees}
+          onChangeEvent={(e) => setTicketFees(e.target.value)}
         />
-        {submitted && (
-          <span id="loyalty-error">
-            The program valuations for {loyaltyProgram.name} has tpg value{' '}
-            {loyaltyProgram.tpg_valuation} results to {pointsPrice}
-          </span>
-        )}
-        <button className="form-field" type="submit">
+        <i>
+          * Ticket Fees are set to 5.95 by default. Please update with ticket
+          Fees.
+        </i>
+        <button className="form-button" type="submit">
           Calculate
         </button>
-        {pointsPrice > ticketCost ? (
-          <p>You should use Cash for this ticket</p>
-        ) : (
-          <p>You should use points for this ticket</p>
+        {showRecommenation && (
+          <p>
+            You need {pointsNeeded} points plus ${ticketFees} for this ticket.
+          </p>
         )}
+
+        {showRecommenation &&
+          (usePoints ? (
+            <p>TPG recommends using points for this ticket</p>
+          ) : (
+            <p>TPG recommends using Cash for this ticket</p>
+          ))}
       </form>
     </div>
   );
