@@ -3,9 +3,13 @@
 A simple Application that recieves input from a user and tells them whether to use cash or points based on the loyalty program. This project is built using React hooks, typescript, Jest and enzyme libraries for testing.
 
 #Getting Started
+After cloning the Repo\
+run `npm install` to install dependencies\
+run `npm start`
+
+Program should be on http://localhost:3000/ if no other local files are running
 
 ## Prerequisites(Packages used)
-
 - react-currency-input
 - react-select
 - es-lint
@@ -16,8 +20,10 @@ These are automatically installed running the command `npm install`
 #Steps
 - First step was to convert file from csv to JSON and store it in the public directory to be able to mimick calls to an api.This enables the fetch call to be replace with URL for real data.
 - Filtered out all the programs that did not have a TPG Valuation, once database (JSON) file is updated with new values, it will automatically display it in the drop-down selection.
+- separated out hotels from flights so they can be passed to their respective components, which is selected when program first runs.
+- the user should alwways be allowed to change from hotels to flight and the component will be updated accordingly.
 - A select component is used that enable the user to be able to select rewards program from a drop down which can be searched, by typing name.
-- For ticket price, I used a currencyInput which ensure the data validation and does not allow characters and values less than Zero. Making the assumption that the currency is USD.
+- For ticket price, I used a currencyInput which comes with data validation and does not allow characters and values less than Zero. Making the assumption that the currency is USD.
 - Recommendations are only shown for valid entries.
 - Depending on entries, once inputs are submitted, PointsToCash recommends when to use either the points or cash option taking into consideration the fees of the ticket. If the fees are higher than the entered ticket cost, It should automatically recommend using cash.
 - For unit testing I am using jest with enzyme, which enables me to mock components and test their functionality.
@@ -25,13 +31,14 @@ These are automatically installed running the command `npm install`
 #Questions
 was not sure what issuer was. In real life situation will follow up with PM to find out. For the purpose of time, I filtered it out, but can easily be added to both options assuming it works for both?
 #Assumptions
--USD
--Point Usage can automatically be calculated based on the tpg_valuation being less than or greater than 1. 
+-Currently only configured for USD
+- Point Usage can automatically be calculated based on the tpg_valuation being less than or greater than 1. 
 - Sometimes Fees could be high than ticket cash price.
 #Improvements
--Using react-test-library a newer library would have enabled me to cover more test case. 
--Could use better UI for recommendation portion, instead on just bold text.
--Add/remove restrictions from the linter
+- Make it currency agnostic, enabling the user to pick a currency, enabling for a more global product.
+- Using react-test-library a newer library would have enabled me to easily cover more test case. 
+- Could use better UI for recommendation portion, instead on just bold text.
+- Add/remove restrictions from the linter to prevent having to escape suggested linter errors
 ## Available Scripts
 
 In the project directory, you can run:
