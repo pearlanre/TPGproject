@@ -19,8 +19,10 @@ export const PointsOrCash: React.FunctionComponent<Props> = () => {
         return response.json();
       })
       .then(function (myJson) {
-        const filtered = myJson.filter((val) => val.tpg_valuation !== '');
-        setData(filtered);
+        const airlineData = myJson.filter(
+          (val) => val.tpg_valuation !== '' && val.type === 'airline'
+        );
+        setData(airlineData);
       });
   };
   useEffect(() => {
@@ -58,7 +60,7 @@ export const PointsOrCash: React.FunctionComponent<Props> = () => {
   return (
     <div>
       <form className="cash-form" onSubmit={handleSubmit}>
-        <p>Select A Rewards Program</p>
+        <p>Select An Airline Rewards Program</p>
         {data && data.length > 0 && (
           <Select
             options={data}

@@ -25,7 +25,7 @@ describe('PointsOrCash', () => {
     expect(wrapper).toMatchSnapshot();
   });
   it('renders Select Rewards label', () => {
-    const rewardsLabel = 'Select A Rewards Program';
+    const rewardsLabel = 'Select An Airline Rewards Program';
     expect(wrapper.find('p').at(0).text()).toEqual(rewardsLabel);
   });
   it('renders ticket price label', () => {

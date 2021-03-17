@@ -7,7 +7,7 @@ exports[`PointsOrCash should render PointOrCash in preview mode 1`] = `
     onSubmit={[Function]}
   >
     <p>
-      Select A Rewards Program
+      Select An Airline Rewards Program
     </p>
     <p>
       Enter Ticket Price
@@ -65,7 +65,7 @@ exports[`PointsOrCash should render PointOrCash in preview mode 2`] = `
     onSubmit={[Function]}
   >
     <p>
-      Select A Rewards Program
+      Select An Airline Rewards Program
     </p>
     <span
       id="loyalty-error"
@@ -133,7 +133,7 @@ exports[`PointsOrCash should render the PointsOrCash Component correctly 1`] = `
     onSubmit={[Function]}
   >
     <p>
-      Select A Rewards Program
+      Select An Airline Rewards Program
     </p>
     <p>
       Enter Ticket Price
