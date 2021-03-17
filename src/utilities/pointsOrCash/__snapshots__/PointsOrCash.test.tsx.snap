@@ -6,11 +6,31 @@ exports[`PointsOrCash should render PointOrCash in preview mode 1`] = `
     className="cash-form"
     onSubmit={[Function]}
   >
+    <StateManager
+      className="form-select"
+      defaultInputValue=""
+      defaultMenuIsOpen={false}
+      defaultValue={
+        Object {
+          "name": "",
+          "tpg_valuation": 0,
+        }
+      }
+      getOptionLabel={[Function]}
+      getOptionValue={[Function]}
+      onChange={[Function]}
+      options={
+        Object {
+          "name": "Private airline",
+          "tpg_valuation": 2,
+          "type": "airline",
+        }
+      }
+    />
     <p>
-      Select An Airline Rewards Program
-    </p>
-    <p>
-      Enter Ticket Price
+      Enter 
+      Hotels
+       Price
     </p>
     <CurrencyInput
       allowNegative={false}
@@ -28,7 +48,9 @@ exports[`PointsOrCash should render PointOrCash in preview mode 1`] = `
       value={0}
     />
     <p>
-      Enter Ticket Fees
+      Enter 
+      Hotels
+       Fees
     </p>
     <CurrencyInput
       allowNegative={false}
@@ -46,7 +68,10 @@ exports[`PointsOrCash should render PointOrCash in preview mode 1`] = `
       value={5.95}
     />
     <i>
-      * Ticket Fees are set to 5.95 by default. Please update with ticket Fees.
+      * Program Fees are set to 5.95 by default. Please update with
+       
+      Hotels
+       Fees.
     </i>
     <button
       className="form-button"
@@ -64,16 +89,36 @@ exports[`PointsOrCash should render PointOrCash in preview mode 2`] = `
     className="cash-form"
     onSubmit={[Function]}
   >
-    <p>
-      Select An Airline Rewards Program
-    </p>
+    <StateManager
+      className="form-select"
+      defaultInputValue=""
+      defaultMenuIsOpen={false}
+      defaultValue={
+        Object {
+          "name": "",
+          "tpg_valuation": 0,
+        }
+      }
+      getOptionLabel={[Function]}
+      getOptionValue={[Function]}
+      onChange={[Function]}
+      options={
+        Object {
+          "name": "Private airline",
+          "tpg_valuation": 2,
+          "type": "airline",
+        }
+      }
+    />
     <span
       id="loyalty-error"
     >
       Please select a Loyalty program
     </span>
     <p>
-      Enter Ticket Price
+      Enter 
+      Hotels
+       Price
     </p>
     <CurrencyInput
       allowNegative={false}
@@ -93,10 +138,14 @@ exports[`PointsOrCash should render PointOrCash in preview mode 2`] = `
     <span
       id="loyalty-error"
     >
-      Please Enter the Ticket Cost
+      Please Enter the 
+      Hotels
+       Cost
     </span>
     <p>
-      Enter Ticket Fees
+      Enter 
+      Hotels
+       Fees
     </p>
     <CurrencyInput
       allowNegative={false}
@@ -114,7 +163,10 @@ exports[`PointsOrCash should render PointOrCash in preview mode 2`] = `
       value={5.95}
     />
     <i>
-      * Ticket Fees are set to 5.95 by default. Please update with ticket Fees.
+      * Program Fees are set to 5.95 by default. Please update with
+       
+      Hotels
+       Fees.
     </i>
     <button
       className="form-button"
@@ -132,11 +184,31 @@ exports[`PointsOrCash should render the PointsOrCash Component correctly 1`] = `
     className="cash-form"
     onSubmit={[Function]}
   >
+    <StateManager
+      className="form-select"
+      defaultInputValue=""
+      defaultMenuIsOpen={false}
+      defaultValue={
+        Object {
+          "name": "",
+          "tpg_valuation": 0,
+        }
+      }
+      getOptionLabel={[Function]}
+      getOptionValue={[Function]}
+      onChange={[Function]}
+      options={
+        Object {
+          "name": "Private airline",
+          "tpg_valuation": 2,
+          "type": "airline",
+        }
+      }
+    />
     <p>
-      Select An Airline Rewards Program
-    </p>
-    <p>
-      Enter Ticket Price
+      Enter 
+      Hotels
+       Price
     </p>
     <CurrencyInput
       allowNegative={false}
@@ -154,7 +226,9 @@ exports[`PointsOrCash should render the PointsOrCash Component correctly 1`] = `
       value={0}
     />
     <p>
-      Enter Ticket Fees
+      Enter 
+      Hotels
+       Fees
     </p>
     <CurrencyInput
       allowNegative={false}
@@ -172,7 +246,10 @@ exports[`PointsOrCash should render the PointsOrCash Component correctly 1`] = `
       value={5.95}
     />
     <i>
-      * Ticket Fees are set to 5.95 by default. Please update with ticket Fees.
+      * Program Fees are set to 5.95 by default. Please update with
+       
+      Hotels
+       Fees.
     </i>
     <button
       className="form-button"

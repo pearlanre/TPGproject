@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Point to Cash App component should render the PointsOrCash Component correctly 1`] = `
+<div
+  className="App"
+>
+  <h1
+    className="tpg_title"
+  >
+    Cash to Points Calculator
+  </h1>
+  <p>
+    Select Air Tickets or Hotels
+  </p>
+  <StateManager
+    defaultInputValue=""
+    defaultMenuIsOpen={false}
+    defaultValue={null}
+    getOptionLabel={[Function]}
+    getOptionValue={[Function]}
+    onChange={[Function]}
+    options={
+      Array [
+        Object {
+          "id": 0,
+          "name": "Air Tickets",
+        },
+        Object {
+          "id": 1,
+          "name": "Hotels",
+        },
+      ]
+    }
+  />
+</div>
+`;

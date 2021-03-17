@@ -31,6 +31,7 @@ was not sure what issuer was. In real life situation will follow up with PM to f
 #Improvements
 -Using react-test-library a newer library would have enabled me to cover more test case. 
 -Could use better UI for recommendation portion, instead on just bold text.
+-Add/remove restrictions from the linter
 ## Available Scripts
 
 In the project directory, you can run:

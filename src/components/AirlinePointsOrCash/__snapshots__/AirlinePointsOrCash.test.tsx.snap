@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AirLinePointsOrCash should render the PointsOrCash Component correctly 1`] = `
+<div>
+  <p>
+    Select An Airline Rewards Program
+  </p>
+  <PointsOrCash
+    data={
+      Object {
+        "name": "Private airline",
+        "tpg_valuation": 2,
+        "type": "airline",
+      }
+    }
+    program="Ticket"
+  />
+</div>
+`;
