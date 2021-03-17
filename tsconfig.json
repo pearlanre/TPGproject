@@ -1,9 +1,9 @@
 {
   "compilerOptions": {
-    "target": "es2015",
+    "target": "ES5",
     "lib": [
+      "es6",
       "dom",
-      "dom.iterable",
       "esnext"
     ],
     "allowJs": true,
@@ -19,9 +19,17 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "noImplicitAny": false
+    "noImplicitAny": false,
+    "declaration": false,
+    "declarationMap": false,
+    "sourceMap": false,
+    "preserveSymlinks": true
   },
   "include": [
     "src"
+  ],
+  "exclude": [
+    "./node_modules",
+    "**/**/node_modules/**/*"
   ]
 }

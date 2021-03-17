@@ -57,7 +57,7 @@ export const PointsOrCash: React.FunctionComponent<Props> = () => {
     submitted && !Number.isNaN(pointsNeeded) && Number.isFinite(pointsNeeded);
   return (
     <div>
-      <form className="register-form" onSubmit={handleSubmit}>
+      <form className="cash-form" onSubmit={handleSubmit}>
         <p>Select A Rewards Program</p>
         {data && data.length > 0 && (
           <Select
@@ -66,6 +66,7 @@ export const PointsOrCash: React.FunctionComponent<Props> = () => {
             getOptionValue={(option) => option.id}
             defaultValue={loyaltyProgram}
             onChange={handleLoyaltyChange}
+            className="form-select"
           />
         )}
 
@@ -102,9 +103,13 @@ export const PointsOrCash: React.FunctionComponent<Props> = () => {
 
         {showRecommendation &&
           (usePoints ? (
-            <p>TPG recommends using points for this ticket</p>
+            <p>
+              TPG recommends using <b>Points</b> for this ticket
+            </p>
           ) : (
-            <p>TPG recommends using Cash for this ticket</p>
+            <p>
+              TPG recommends using <b>Cash</b> for this ticket
+            </p>
           ))}
       </form>
     </div>

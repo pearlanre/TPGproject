@@ -1,9 +1,135 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`PointsOrCash should render PointOrCash in preview mode 1`] = `
+<div>
+  <form
+    className="cash-form"
+    onSubmit={[Function]}
+  >
+    <p>
+      Select A Rewards Program
+    </p>
+    <p>
+      Enter Ticket Price
+    </p>
+    <CurrencyInput
+      allowNegative={false}
+      autoFocus={false}
+      className="form-field"
+      decimalSeparator="."
+      inputType="text"
+      onChange={[Function]}
+      onChangeEvent={[Function]}
+      precision="2"
+      prefix=""
+      selectAllOnFocus={false}
+      suffix=""
+      thousandSeparator=","
+      value={0}
+    />
+    <p>
+      Enter Ticket Fees
+    </p>
+    <CurrencyInput
+      allowNegative={false}
+      autoFocus={false}
+      className="form-field"
+      decimalSeparator="."
+      inputType="text"
+      onChange={[Function]}
+      onChangeEvent={[Function]}
+      precision="2"
+      prefix=""
+      selectAllOnFocus={false}
+      suffix=""
+      thousandSeparator=","
+      value={5.95}
+    />
+    <i>
+      * Ticket Fees are set to 5.95 by default. Please update with ticket Fees.
+    </i>
+    <button
+      className="form-button"
+      type="submit"
+    >
+      Calculate
+    </button>
+  </form>
+</div>
+`;
+
+exports[`PointsOrCash should render PointOrCash in preview mode 2`] = `
+<div>
+  <form
+    className="cash-form"
+    onSubmit={[Function]}
+  >
+    <p>
+      Select A Rewards Program
+    </p>
+    <span
+      id="loyalty-error"
+    >
+      Please select a Loyalty program
+    </span>
+    <p>
+      Enter Ticket Price
+    </p>
+    <CurrencyInput
+      allowNegative={false}
+      autoFocus={false}
+      className="form-field"
+      decimalSeparator="."
+      inputType="text"
+      onChange={[Function]}
+      onChangeEvent={[Function]}
+      precision="2"
+      prefix=""
+      selectAllOnFocus={false}
+      suffix=""
+      thousandSeparator=","
+      value={0}
+    />
+    <span
+      id="loyalty-error"
+    >
+      Please Enter the Ticket Cost
+    </span>
+    <p>
+      Enter Ticket Fees
+    </p>
+    <CurrencyInput
+      allowNegative={false}
+      autoFocus={false}
+      className="form-field"
+      decimalSeparator="."
+      inputType="text"
+      onChange={[Function]}
+      onChangeEvent={[Function]}
+      precision="2"
+      prefix=""
+      selectAllOnFocus={false}
+      suffix=""
+      thousandSeparator=","
+      value={5.95}
+    />
+    <i>
+      * Ticket Fees are set to 5.95 by default. Please update with ticket Fees.
+    </i>
+    <button
+      className="form-button"
+      type="submit"
+    >
+      Calculate
+    </button>
+  </form>
+</div>
+`;
+
 exports[`PointsOrCash should render the PointsOrCash Component correctly 1`] = `
 <div>
   <form
-    className="register-form"
+    className="cash-form"
     onSubmit={[Function]}
   >
     <p>

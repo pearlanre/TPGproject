@@ -16,7 +16,7 @@ body {
   padding: 10px;
 }
 
-.register-form {
+.cash-form {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
